@@ -77,12 +77,14 @@ class Session:
         # Create empty profile to avoid annoying Mac Popup
         if store_session:
             if not user_data:
-            	user_data =  f"{Path().absolute()}/chrome_profile/"
+            	user_data =  f"{Path().absolute()}/chrome_profile"
             if not os.path.isdir(user_data):
                 os.mkdir(user_data)
 
             Path(f'{user_data}First Run').touch()
+            options.add_argument('--profile-directory=Default')
             options.add_argument(f"--user-data-dir={user_data}")
+            print(user_data)
 
         options.add_argument('--no-first-run --no-service-autorun --password-store=basic')
         options.add_argument("--lang=en-GB")
@@ -108,8 +110,8 @@ class Session:
 
         # Getting the chromedriver from cache or download it from internet
         print("Getting ChromeDriver ...")
-        self.browser = uc.Chrome(options=options) #ChromeDriverManager().install(),
-        #self.browser = webdriver.Chrome(options=options)
+        self.browser = uc.Chrome(options=options, executable_path='/usr/bin/chromedriver') #ChromeDriverManager().install(),
+        # self.browser = webdriver.Chrome(chrome_options=options, executable_path='/usr/bin/chromedriver')
         self.browser.set_window_size(1250, 750)
 
         # clear the console based on the operating system you're using
