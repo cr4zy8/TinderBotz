@@ -1,6 +1,23 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
 # Tinderbotz
 **Consider giving a ⭐ if you like the project!**
+
+# Update
+
+Modified the script for helping u having interesting conversation with russian people, I'd advise friendly words first since they are really deep into government propaganda.
+
+Already set the location for Moscow or St Petersburg, you just need to modify the message and the amount of people to match before messaging
+
+Just run
+
+```
+python3 main.py
+```
+
+## Considerations
+
+There's installation instructions in here but keep in mind that you have to download and install chromedriver
+
 ## Project
 <!-- PROJECT LOGO -->
 <br />
